@@ -29,18 +29,37 @@
     <!-- Header -->
     <header class="site-header">
       <div class="header-content">
-        <div class="brand animate-item" style="--delay: 0s;">
+        <div class="header-eyebrow animate-item" style="--delay: 0s;">
+          <span class="header-eyebrow-dot" aria-hidden="true"></span>
+          Linux distro ASCII art collection
+        </div>
+
+        <div class="brand animate-item" style="--delay: 0.1s;">
           <!-- Logo with typewriter wrapper -->
           <h1 class="logo">
             <span class="logo-gradient" id="logo-typewriter" aria-label="BinaryArts"></span><span class="cursor-blink" id="logo-cursor">|</span>
           </h1>
           <span id="stat-count" class="stat-badge" title="Total ASCII art logos" hidden>0 logos</span>
         </div>
-        <p class="subtitle animate-item" style="--delay: 0.7s;">Linux ASCII Art Collection</p>
+
+        <p class="subtitle animate-item" style="--delay: 0.2s;">
+          Every mainstream and obscure <strong>Linux distribution</strong>, rendered as terminal-ready ASCII —
+          pulled from <a href="https://github.com/dylanaraps/neofetch" target="_blank" rel="noopener">neofetch</a>,
+          <a href="https://github.com/fastfetch-cli/fastfetch" target="_blank" rel="noopener">fastfetch</a>,
+          <a href="https://github.com/BinaryFetch-CLI/BinaryFetch" target="_blank" rel="noopener">BinaryFetch</a>, and
+          <a href="https://github.com/hykilpikonna/hyfetch" target="_blank" rel="noopener">hyfetch</a> — normalized and made copy-paste ready in one place.
+        </p>
+
+        <div class="header-stats animate-item" style="--delay: 0.3s;" aria-label="Collection statistics">
+          <div class="header-stat"><span class="header-stat-value">527</span><span class="header-stat-label">ASCII logos</span></div>
+          <div class="header-stat"><span class="header-stat-value">312</span><span class="header-stat-label">Distros indexed</span></div>
+          <div class="header-stat"><span class="header-stat-value">3 <small>modes</small></span><span class="header-stat-label">Normal · CP · RAW</span></div>
+          <div class="header-stat"><span class="header-stat-value">100%</span><span class="header-stat-label">Copy-paste ready</span></div>
+        </div>
       </div>
 
       <!-- Search Bar & Controls -->
-      <div class="search-section animate-item" style="--delay: 0.85s;">
+      <div class="search-section animate-item" style="--delay: 0.4s;">
         <div class="search-wrapper">
           <svg class="search-icon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="11" cy="11" r="8"></circle>
@@ -66,7 +85,7 @@
         <!-- Global Mode Selector -->
         <div class="global-modes" role="toolbar" aria-label="Global display mode">
           <span class="mode-label">Mode:</span>
-          <div class="mode-toggle-group">
+          <div class="mode-toggle-group" data-active="normal">
             <button id="btn-global-normal" class="btn-mode active" data-mode="normal">Normal</button>
             <button id="btn-global-cp" class="btn-mode" data-mode="cp">CP</button>
             <button id="btn-global-raw" class="btn-mode" data-mode="raw">RAW</button>
@@ -93,7 +112,7 @@
           <line x1="12" y1="8" x2="12" y2="12"></line>
           <line x1="12" y1="16" x2="12.01" y2="16"></line>
         </svg>
-        <span>Unable to load collection. Serve via HTTP — <code>python -m http.server</code></span>
+        <span>Unable to load the embedded collection.</span>
       </div>
 
       <!-- Empty State -->
@@ -113,13 +132,26 @@
 
     <!-- Footer -->
     <footer class="site-footer">
-      <div class="footer-content">
-        <p class="footer-brand"><strong>BinaryArts</strong> — Linux ASCII Art Collection</p>
-        <p class="attribution">
+      <div class="footer-glow" aria-hidden="true"></div>
+      <div class="footer-wrap">
+        <p class="footer-text">
           BinaryArts is an independent collection and browser for Linux ASCII art. Artwork is sourced from open-source projects including
-          <strong>Fastfetch</strong>, <strong>Neofetch</strong>, <strong>BinaryFetch</strong>, and other publicly available repositories.
-          BinaryArts does not claim ownership of the original artwork. Refer to respective projects and their licenses for attribution and usage.
+          <a href="https://github.com/fastfetch-cli/fastfetch" target="_blank" rel="noopener">Fastfetch</a>,
+          <a href="https://github.com/dylanaraps/neofetch" target="_blank" rel="noopener">Neofetch</a>,
+          <a href="https://github.com/BinaryFetch-CLI/BinaryFetch" target="_blank" rel="noopener">BinaryFetch</a>,
+          and other publicly available repositories. BinaryArts does not claim ownership of the original artwork — refer to each respective project and its license for attribution and usage.
         </p>
+
+        <div class="footer-bottom">
+          <p class="footer-legal">Open source. Open for everyone. No restrictions.</p>
+          <div class="maintainer-row">
+            <span class="role">Maintained by</span>
+            <a class="maintainer" href="https://github.com/intercentury" target="_blank" rel="noopener">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+              <span>intercentury</span>
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   </div>
